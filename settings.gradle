@@ -1,0 +1,3 @@
+
+rootProject.name = "CapStone Project"
+include ':app'
