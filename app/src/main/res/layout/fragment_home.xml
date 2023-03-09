@@ -25,8 +25,6 @@
             android:id="@+id/search_view"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-
-
             android:background="@drawable/corners_round_search"
             android:drawableLeft="@drawable/baseline_search_icon"
             android:ellipsize="end"
@@ -41,18 +39,22 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
+
     </com.google.android.material.appbar.AppBarLayout>
 
-    <TableLayout
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tableLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="630dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

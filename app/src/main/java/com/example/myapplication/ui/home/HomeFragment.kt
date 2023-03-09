@@ -6,11 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.myapplication.MainActivity
 import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentHomeBinding
+import com.example.myapplication.ui.companylist.CompanyListFragment
+import com.google.android.material.tabs.TabLayoutMediator
 
 
 class HomeFragment : Fragment() {
@@ -28,17 +32,44 @@ class HomeFragment : Fragment() {
     ): View {
         val homeViewModel = ViewModelProvider(this)[HomeViewModel::class.java]
 
-
-        (requireActivity() as MainActivity).supportActionBar!!.hide()
-
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
+
+
         val root: View = binding.root
 
         return root
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        val viewPager = binding.viewPager
+        val tab = binding.tableLayout
+        val adapter = ViewPageAdapter(requireActivity())
+        viewPager.adapter = adapter
+
+        val tabTitles = requireActivity().resources.getStringArray(R.array.tab_titles)
+        TabLayoutMediator(tab, viewPager) { tab, position ->
+            tab.text = tabTitles[position]
+            viewPager.setCurrentItem(tab.position, true)
+        }.attach()
+
+        viewPager.isUserInputEnabled = false
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+}
+
+enum class StockListFilter {
+    ALL, SAVED
+}
+
+
+class ViewPageAdapter(activity: FragmentActivity) : FragmentStateAdapter(activity) {
+    override fun getItemCount() = StockListFilter.values().size
+
+    override fun createFragment(position: Int) = CompanyListFragment.newInstance(StockListFilter.values()[position])
+
 }

@@ -5,8 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.navigation.fragment.findNavController
 import com.example.myapplication.MainActivity
 import com.example.myapplication.R
+import com.example.myapplication.databinding.FragmentLoginBinding
+import com.example.myapplication.databinding.FragmentRegistrationBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,6 +27,15 @@ class RegistrationFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+
+
+    private var _binding: FragmentRegistrationBinding? = null
+
+    // This property is only valid between onCreateView and
+    // onDestroyView.
+    private val binding get() = _binding!!
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -37,7 +50,12 @@ class RegistrationFragment : Fragment() {
     ): View? {
         (requireActivity() as MainActivity).supportActionBar!!.hide()
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_registration, container, false)
+        _binding = FragmentRegistrationBinding.inflate(inflater, container, false)
+        val loginBinding: TextView = binding.alreadyHaveAccount
+        loginBinding.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_registration_to_navigation_login2)
+        }
+        return binding.root
     }
 
     companion object {

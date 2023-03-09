@@ -13,4 +13,14 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="TabLayoutStyle" parent="Widget.MaterialComponents.TabLayout.PrimarySurface">
+        <item name="tabMode">scrollable</item>
+        <item name="tabIndicator">@null</item>
+        <item name="tabRippleColor">@android:color/transparent</item>
+<!--        <item name="tabTextAppearance">@style/TabTextAppearance</item>-->
+        <item name="tabTextColor">@color/yellow</item>
+        <item name="tabSelectedTextColor">?attr/colorSecondary</item>
+    </style>
+
 </resources>
