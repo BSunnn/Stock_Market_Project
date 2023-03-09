@@ -7,8 +7,8 @@ import com.example.myapplication.network.StockCompanyApi
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
-import com.yaroslavgamayunov.stockviewer.vo.StockCompany
-import com.yaroslavgamayunov.stockviewer.vo.StockItemListResponseDeserializer
+import com.example.myapplication.model.StockCompany
+import com.example.myapplication.model.StockItemListResponseDeserializer
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient

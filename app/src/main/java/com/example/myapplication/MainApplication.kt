@@ -5,7 +5,6 @@ import com.example.myapplication.di.AppComponent
 import com.example.myapplication.di.AppModule
 import com.example.myapplication.di.DaggerAppComponent
 import com.example.myapplication.di.FragmentComponent
-import com.yandex.metrica.YandexMetricaConfig
 
 class MainApplication: Application() {
 

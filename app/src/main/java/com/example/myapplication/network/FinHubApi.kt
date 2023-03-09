@@ -1,8 +1,8 @@
 package com.example.myapplication.network
 
-import com.yaroslavgamayunov.stockviewer.vo.ConstituentsResponse
-import com.yaroslavgamayunov.stockviewer.vo.NewsItem
-import com.yaroslavgamayunov.stockviewer.vo.StockCandleData
+import com.example.myapplication.model.ConstituentsResponse
+import com.example.myapplication.model.NewsItem
+import com.example.myapplication.model.StockCandleData
 import retrofit2.http.GET
 import retrofit2.http.Query
 

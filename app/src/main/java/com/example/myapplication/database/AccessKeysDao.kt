@@ -4,7 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.yaroslavgamayunov.stockviewer.vo.RemoteKeys
+import com.example.myapplication.model.RemoteKeys
 
 @Dao
 interface AccessKeysDao {

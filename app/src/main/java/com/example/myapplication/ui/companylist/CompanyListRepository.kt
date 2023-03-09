@@ -7,7 +7,7 @@ import androidx.paging.PagingData
 import com.example.myapplication.database.StockItemsDatabase
 import com.example.myapplication.network.FinHubApi
 import com.example.myapplication.network.StockCompanyApi
-import com.yaroslavgamayunov.stockviewer.vo.StockCompany
+import com.example.myapplication.model.StockCompany
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

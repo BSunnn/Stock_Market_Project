@@ -1,13 +1,12 @@
 package com.example.myapplication.ui.companylist
 
-import androidx.paging.ExperimentalPagingApi
 import androidx.paging.LoadType
 import androidx.paging.PagingState
 import androidx.paging.RemoteMediator
 import com.example.myapplication.database.StockItemsDatabase
 import com.example.myapplication.network.FinHubApi
 import com.example.myapplication.network.StockCompanyApi
-import com.yaroslavgamayunov.stockviewer.vo.StockCompany
+import com.example.myapplication.model.StockCompany
 import javax.inject.Inject
 
 class PageKeyedRemoteMediator @Inject constructor(

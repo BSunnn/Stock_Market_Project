@@ -1,7 +1,7 @@
 package com.example.myapplication.database
 
 import androidx.room.*
-import com.yaroslavgamayunov.stockviewer.vo.SavedStockItem
+import com.example.myapplication.model.SavedStockItem
 
 @Dao
 interface SavedStockCompanyItemsDao {

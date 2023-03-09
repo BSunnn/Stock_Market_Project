@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.yaroslavgamayunov.stockviewer.vo.StockCompany
+import com.example.myapplication.model.StockCompany
 
 class CompanyListAdapter(
     val onItemClick: (StockCompany) -> Unit

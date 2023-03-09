@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import com.yaroslavgamayunov.stockviewer.vo.StockCompany
+import com.example.myapplication.model.StockCompany
 import kotlinx.coroutines.flow.Flow
 
 class CompanyListViewModel(private val companyListRepository: CompanyListRepository) : ViewModel() {

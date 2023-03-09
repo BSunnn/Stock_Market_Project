@@ -1,7 +1,9 @@
 package com.example.myapplication.network
 
+
 import com.example.myapplication.model.CompanyItem
-import com.yaroslavgamayunov.stockviewer.vo.StockCompany
+import com.example.myapplication.model.StockCompany
+
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -15,8 +17,8 @@ interface StockCompanyApi {
     @GET("stock/market/batch?types=quote,logo")
     suspend fun getStockItems(
         @Query("symbols", encoded = true) tickers: String,
-    ): List<StockCompany>
+    ): List<CompanyItem>
 
     @GET("/stable/stock/{symbol}/company")
-    suspend fun getCompanyItem(@Path("symbol") ticker: String): CompanyItem
+    suspend fun getCompanyItem(@Path("symbol") ticker: String): StockCompany
 }

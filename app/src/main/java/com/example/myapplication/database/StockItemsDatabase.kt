@@ -2,10 +2,9 @@ package com.example.myapplication.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.myapplication.model.CompanyItem
-import com.yaroslavgamayunov.stockviewer.vo.RemoteKeys
-import com.yaroslavgamayunov.stockviewer.vo.SavedStockItem
-import com.yaroslavgamayunov.stockviewer.vo.StockCompany
+import com.example.myapplication.model.RemoteKeys
+import com.example.myapplication.model.SavedStockItem
+import com.example.myapplication.model.StockCompany
 
 
 @Database(
