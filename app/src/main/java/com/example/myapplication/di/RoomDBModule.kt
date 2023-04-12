@@ -9,6 +9,10 @@ import dagger.Provides
 import javax.inject.Named
 
 
+
+
+
+//providing an instance of the StockItemsDatabase inside the RepositoryScope
 @Module
 class RoomDBModule {
     @Provides

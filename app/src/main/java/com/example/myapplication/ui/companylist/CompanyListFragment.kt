@@ -1,20 +1,23 @@
 package com.example.myapplication.ui.companylist
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.MainApplication
-import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentCompanyListBinding
-import com.example.myapplication.databinding.FragmentLoginBinding
+import com.example.myapplication.model.StockCompany
+import com.example.myapplication.ui.home.HomeFragmentDirections
 import com.example.myapplication.ui.home.StockListFilter
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -22,10 +25,11 @@ import javax.inject.Inject
 class CompanyListFragment : Fragment() {
 
     companion object {
-        const val FILTER_LIST = "filter_list"
+        private const val LIST_FILTER_TAG = "filter_list"
+
         fun newInstance(stockListFilter: StockListFilter): CompanyListFragment {
             return CompanyListFragment().apply {
-                arguments = bundleOf(FILTER_LIST to stockListFilter)
+                arguments = bundleOf(LIST_FILTER_TAG to stockListFilter)
             }
         }
     }
@@ -36,9 +40,7 @@ class CompanyListFragment : Fragment() {
     lateinit var companyListFactory: CompanyListFactory
     lateinit var viewModel: CompanyListViewModel
 
-
     lateinit var recyclerView: RecyclerView
-
     lateinit var adapter: CompanyListAdapter
 
     private val binding get() = _binding!!
@@ -50,7 +52,6 @@ class CompanyListFragment : Fragment() {
         _binding = FragmentCompanyListBinding.inflate(inflater, container, false)
         recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-
         return binding.root
     }
 
@@ -62,19 +63,59 @@ class CompanyListFragment : Fragment() {
             companyListFactory
         )[CompanyListViewModel::class.java]
 
-        val filter = arguments?.get(FILTER_LIST)
+        val filter = arguments?.get(LIST_FILTER_TAG)?: StockListFilter.ALL
 
+        adapter = CompanyListAdapter(
+            onItemClick = { compnayItems->
+                val action = HomeFragmentDirections.actionNavigationHomeToNavigationStock(compnayItems.symbol)
+                findNavController().navigate(action)
+            }
+        )
 
         recyclerView.adapter = adapter
 
-        lifecycleScope.launch {
-            when (filter) {
-                StockListFilter.ALL ->
-                    viewModel.getStocksForIndexPaged("^NDX").collectLatest {
-                        adapter.submitData(it)
+        val stockCompanyList = readJsonFileFromAssets()
+
+        when (filter) {
+            StockListFilter.ALL -> {
+                adapter.items = stockCompanyList.map { stockCompany ->
+                    StockCompany(
+                        symbol = stockCompany.symbol,
+                        name = stockCompany.name,
+                        previousDayClosePrice = stockCompany.previousDayClosePrice,
+                        logoUrl = stockCompany.logoUrl,
+                        isSaved = stockCompany.isSaved,
+                        latestPrice = stockCompany.latestPrice
+                    )
+                }
+            }
+            StockListFilter.SAVED -> {
+                lifecycleScope.launch {
+                    viewModel.getSavedStocksPaged().collectLatest {
+                        adapter.items = stockCompanyList.filter { stockCompany->
+                            stockCompany.isSaved
+                        }.map {stockCompany ->
+                            StockCompany(
+                                symbol = stockCompany.symbol,
+                                name = stockCompany.name,
+                                previousDayClosePrice = stockCompany.previousDayClosePrice,
+                                logoUrl = stockCompany.logoUrl,
+                                isSaved = stockCompany.isSaved,
+                                latestPrice = stockCompany.latestPrice
+                            )
+                        }
+
                     }
+
+                }
             }
         }
     }
 
+
+    private   fun readJsonFileFromAssets(): List<StockCompany> {
+        val json = context?.assets?.open("stocks.json")?.bufferedReader().use { it?.readText() }
+        val type = object : TypeToken<List<StockCompany>>() {}.type
+        return Gson().fromJson(json, type)
+    }
 }

@@ -2,7 +2,7 @@
     <string name="app_name">My Application</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Settings</string>
+    <string name="title_settings">Settings</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -10,5 +10,11 @@
     <array name="tab_titles">
         <item>Company</item>
         <item>Saved</item>
+    </array>
+
+    <array name="stock_tab_titles">
+        <item>StockChart</item>
+        <item>Details</item>
+        <item>News</item>
     </array>
 </resources>

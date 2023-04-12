@@ -53,7 +53,7 @@ class RegistrationFragment : Fragment() {
         _binding = FragmentRegistrationBinding.inflate(inflater, container, false)
         val loginBinding: TextView = binding.alreadyHaveAccount
         loginBinding.setOnClickListener {
-            findNavController().navigate(R.id.action_navigation_registration_to_navigation_login2)
+           // findNavController().navigate(R.id.action_navigation_registration_to_navigation_login2)
         }
         return binding.root
     }

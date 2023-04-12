@@ -9,7 +9,7 @@ import com.example.myapplication.model.StockCompany
 
 @Database(
     entities = [StockCompany::class, SavedStockItem::class, RemoteKeys::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract  class StockItemsDatabase: RoomDatabase() {

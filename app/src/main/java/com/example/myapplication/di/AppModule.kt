@@ -12,6 +12,7 @@ import javax.inject.Named
 @Module
 class AppModule(private val application: MainApplication ) {
 
+    //Base class for maintaining global application state
     @Named("application")
     @Provides
     @ApplicationScope
@@ -25,6 +26,4 @@ class AppModule(private val application: MainApplication ) {
     fun provideContext(@Named("application") application: Application): Context {
         return application.applicationContext
     }
-
-
 }

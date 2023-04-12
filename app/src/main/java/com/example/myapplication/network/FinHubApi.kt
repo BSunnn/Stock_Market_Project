@@ -7,11 +7,9 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface FinHubApi {
-
     companion object {
         const val BASE_URL = "https://finnhub.io/api/v1/"
     }
-
     @GET("index/constituents?")
     suspend fun getConstituents(
         @Query("symbol") stockIndex: String,

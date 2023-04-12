@@ -4,20 +4,22 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.*
 import com.google.gson.annotations.SerializedName
+import kotlinx.serialization.Serializable
 import java.lang.reflect.Type
 
 @Entity(tableName = "stock_companies")
+@Serializable
 data class StockCompany(
     @PrimaryKey
     @SerializedName("symbol")
     val symbol: String,
     @SerializedName("companyName")
-    val name: String,
+    val name: String? = null,
     @SerializedName("previousClose")
-    val previousDayClosePrice: Double,
-    val latestPrice: Double,
-    val isFavourite: Boolean = false,
-    val logoUrl: String
+    val previousDayClosePrice: Double? = null,
+    val logoUrl: String?,
+    var isSaved: Boolean = false,
+    val latestPrice: Double
 )
 
 // process the Iex response

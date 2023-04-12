@@ -14,11 +14,12 @@ interface StockCompanyApi {
         const val BASE_URL = "https://cloud.iexapis.com/v1/"
     }
 
+    // GET are used to specify the HTTP method and endpoint for the API requests
+    // suspend here is to needs to be called from coroutine to
     @GET("stock/market/batch?types=quote,logo")
     suspend fun getStockItems(
         @Query("symbols", encoded = true) tickers: String,
-    ): List<CompanyItem>
-
-    @GET("/stable/stock/{symbol}/company")
-    suspend fun getCompanyItem(@Path("symbol") ticker: String): StockCompany
+    ): List<StockCompany>
 }
+
+

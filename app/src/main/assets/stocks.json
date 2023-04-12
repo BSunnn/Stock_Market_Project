@@ -1,0 +1,132 @@
+[
+  {
+    "symbol": "AAPL",
+    "companyName": "Apple Inc.",
+    "previousClose": 120.99,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Apple-logo.png",
+    "isSaved": false,
+    "latestPrice": 121.05
+  },
+  {
+    "symbol": "GOOG",
+    "companyName": "Alphabet Inc.",
+    "previousClose": 2080.74,
+    "logoUrl": "https://logos-world.net/wp-content/uploads/2022/05/Alphabet-Emblem.png",
+    "isSaved": false,
+    "latestPrice": 2090.25
+  },
+  {
+    "symbol": "MSFT",
+    "companyName": "Microsoft Corporation",
+    "previousClose": 234.51,
+    "logoUrl": "https://freepngimg.com/save/28350-microsoft-logo-photos/880x660",
+    "isSaved": true,
+    "latestPrice": 235.68
+  },
+  {
+    "symbol": "TSLA",
+    "companyName": "Tesla, Inc.",
+    "previousClose": 647.22,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Tesla_logo.png/640px-Tesla_logo.png",
+    "isSaved": false,
+    "latestPrice": 654.87
+  },
+  {
+    "symbol": "FB",
+    "companyName": "Facebook, Inc.",
+    "previousClose": 290.11,
+    "logoUrl": "https://1000logos.net/wp-content/uploads/2021/04/Facebook-logo.png",
+    "isSaved": false,
+    "latestPrice": 292.45
+  },
+  {
+    "symbol": "NKE",
+    "companyName": "NIKE, Inc.",
+    "previousClose": 141.22,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1200px-Logo_NIKE.svg.png",
+    "isSaved": false,
+    "latestPrice": 142.01
+  },
+  {
+    "symbol": "JPM",
+    "companyName": "JPMorgan Chase & Co.",
+    "previousClose": 155.42,
+    "logoUrl": "https://i.pinimg.com/originals/a9/4d/74/a94d74b772e25988bbbbec3374dc5c56.png",
+    "isSaved": false,
+    "latestPrice": 157.01
+  },
+  {
+    "symbol": "V",
+    "companyName": "Visa Inc.",
+    "previousClose": 211.07,
+    "logoUrl": "https://logos-world.net/wp-content/uploads/2020/05/Visa-Logo.png",
+    "isSaved": false,
+    "latestPrice": 213.45
+  },
+  {
+    "symbol": "KO",
+    "companyName": "The Coca-Cola Company",
+    "previousClose": 52.23,
+    "logoUrl": "https://tigriseventsinc.com/wp-content/uploads/2010/05/Coca-Cola-Logo.png",
+    "isSaved": false,
+    "latestPrice": 52.68
+  },
+  {
+    "symbol": "NVDA",
+    "companyName": "NVIDIA Corporation",
+    "previousClose": 503.23,
+    "logoUrl": "https://logodownload.org/wp-content/uploads/2014/09/nvidia-logo-0.png",
+    "isSaved": false,
+    "latestPrice": 508.12
+  },
+  {
+    "symbol": "PG",
+    "companyName": "Procter & Gamble Co",
+    "previousClose": 133.09,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Procter_%26_Gamble_logo.svg/1200px-Procter_%26_Gamble_logo.svg.png",
+    "isSaved": false,
+    "latestPrice": 133.87
+  },
+  {
+    "symbol": "VZ",
+    "companyName": "Verizon Communications Inc.",
+    "previousClose": 58.77,
+    "logoUrl": "https://logodownload.org/wp-content/uploads/2020/05/verizon-logo-0.png",
+    "isSaved": false,
+    "latestPrice": 133.87
+  },
+  {
+    "symbol": "PYPL",
+    "companyName": "PayPal Holdings, Inc.",
+    "previousClose": 236.95,
+    "logoUrl": "https://cdn.cdnlogo.com/logos/p/9/paypal.png",
+    "isSaved": false,
+    "latestPrice": 238.12
+  },
+  {
+    "symbol": "ORCL",
+    "companyName": "Oracle Corporation",
+    "previousClose": 77.46,
+    "logoUrl": "https://banner2.cleanpng.com/20180406/vuq/kisspng-oracle-corporation-oracle-database-computer-icons-brand-5ac77b0641eae0.86026189152302259827.jpg",
+    "isSaved": false,
+    "latestPrice": 78.23
+  },
+  {
+    "symbol": "NFLX",
+    "companyName": "Netflix, Inc.",
+    "previousClose": 516.39,
+    "logoUrl": "https://www.freepnglogos.com/uploads/netflix-logo-circle-png-5.png",
+    "isSaved": false,
+    "latestPrice": 521.89
+  },
+  {
+    "symbol": "ADBE",
+    "companyName": "Adobe Inc.",
+    "previousClose": 500.68,
+    "logoUrl": "https://logodownload.org/wp-content/uploads/2021/05/adobe-acrobat-reader-logo-1.png",
+    "isSaved": false,
+    "latestPrice": 504.72
+  }
+]
+
+

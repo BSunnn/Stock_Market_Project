@@ -19,7 +19,7 @@ import javax.inject.Named
 
 @Module
 class NetworkApiModule {
-
+    //it provides an instance of the OkHttpClient class
     @Provides
     @Named("finHubApiOkHttpClient")
     fun provideFinHubApiOkHttpClient(): OkHttpClient {
@@ -34,12 +34,16 @@ class NetworkApiModule {
     }
 
 
+
+
+    //method provides an instance of the FinHubApi interface, use a to
+    // serializing deserializing parse the map the Json with specific objects
     @Provides
     @RepositoryScope
     fun provideFinApi(
         @Named("finHubGson") gson: Gson,
         @Named("finHubApiOkHttpClient") client: OkHttpClient): FinHubApi {
-        return NewFinService(FinHubApi.BASE_URL,client,gson,FinHubApi::class.java)
+        return newFinService(FinHubApi.BASE_URL,client,gson,FinHubApi::class.java)
     }
 
 
@@ -49,26 +53,27 @@ class NetworkApiModule {
         @Named("IexCloudOkHttpClient") client: OkHttpClient,
         @Named("IexGson") gson: Gson,
 ): StockCompanyApi {
-        return NewIexService(StockCompanyApi.BASE_URL,client,gson,StockCompanyApi::class.java)
+        return newIexService(StockCompanyApi.BASE_URL,client,gson,StockCompanyApi::class.java)
     }
 
-    private fun NewIexService(
+
+    // a helper function to create a Retrofit instance
+    private fun newIexService(
         baseUrl: String,
         client: OkHttpClient,
         gson: Gson,
         java: Class<StockCompanyApi>): StockCompanyApi {
-
-
         return Retrofit
             .Builder()
             .baseUrl(baseUrl)
+                //serailzi the Json file
             .addConverterFactory(GsonConverterFactory.create(gson))
             .client(client)
             .build().create(java)
     }
 
 
-    private fun NewFinService(
+    private fun newFinService(
         baseUrl: String,
         client: OkHttpClient,
         gson: Gson,
@@ -90,7 +95,7 @@ class NetworkApiModule {
 
         return OkHttpClient.Builder().addInterceptor {
             var request = it.request()
-            var url = request.url.newBuilder().addQueryParameter("apiToken", accessToken).build()
+            val url = request.url.newBuilder().addQueryParameter("token", accessToken).build()
             request = request.newBuilder().url(url).build()
             return@addInterceptor it.proceed(request)
         }.addInterceptor(interceptor).build()
