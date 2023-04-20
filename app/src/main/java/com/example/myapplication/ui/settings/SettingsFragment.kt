@@ -7,8 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.example.myapplication.BuildConfig
 import com.example.myapplication.MainActivity
+import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentNotificationsBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class SettingsFragment : Fragment() {
 
@@ -23,17 +27,22 @@ class SettingsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val settingssViewModel =
-            ViewModelProvider(this)[SettingssViewModel::class.java]
         (requireActivity() as MainActivity).supportActionBar!!.show()
+        val versionName: String = BuildConfig.VERSION_NAME
 
         _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
-        settingssViewModel.text.observe(viewLifecycleOwner) {
-
+        val user = FirebaseAuth.getInstance().currentUser
+        if (user != null) {
+            binding.userEmail.text = user.email
         }
-        return root
+        binding.appVersion.text = "app version: $versionName"
+
+        binding.logout.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            findNavController().navigate(R.id.action_navigation_notifications_to_navigation_login)
+        }
+        return binding.root
     }
 
     override fun onDestroyView() {

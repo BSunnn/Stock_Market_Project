@@ -26,15 +26,11 @@ class NetworkApiModule {
         return newOkHttpClient(accessToken = BuildConfig.FINHUB_API_TOKEN)
     }
 
-
     @Provides
     @Named("IexCloudOkHttpClient")
     fun provideIexCloudOkHttpClient(): OkHttpClient {
         return newOkHttpClient(accessToken = BuildConfig.IEX_API_TOKEN)
     }
-
-
-
 
     //method provides an instance of the FinHubApi interface, use a to
     // serializing deserializing parse the map the Json with specific objects

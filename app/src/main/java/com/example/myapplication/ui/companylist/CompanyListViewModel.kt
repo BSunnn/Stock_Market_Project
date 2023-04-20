@@ -16,8 +16,6 @@ class CompanyListViewModel(private val companyListRepository: CompanyListReposit
         return companyListRepository.savedItems().cachedIn(viewModelScope)
     }
 
-    suspend fun getStockItem(symbol: String): StockCompany =  companyListRepository.getStockItem(symbol)
-
     fun save(symbol: String) {
         viewModelScope.launch(Dispatchers.IO) {
             companyListRepository.saved(symbol)

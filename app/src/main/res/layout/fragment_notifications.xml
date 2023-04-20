@@ -26,16 +26,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Account Settings"
+            android:text="User Name"
             android:textSize="18sp"
             android:padding="16dp"/>
 
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="100dp"
-            android:src="@drawable/baseline_arrow_forward" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="Bin Sun"
+            android:textSize="18sp"
+            android:padding="1dp"/>
 
     </LinearLayout>
 
@@ -52,7 +53,7 @@
         android:paddingRight="1dp">
 
         <ImageView
-            android:src="@drawable/ic_notifications_black_24dp"
+            android:src="@drawable/ic_email"
             android:layout_width="40dp"
             android:layout_marginTop="10dp"
             android:layout_height="40dp">
@@ -62,16 +63,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Notification"
+            android:text="Email"
             android:textSize="18sp"
             android:padding="16dp"/>
 
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="140dp"
-            android:src="@drawable/baseline_arrow_forward" />
+        <TextView
+            android:id="@+id/userEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:text="Bin Sun"
+            android:textSize="18sp"
+            android:padding="1dp"/>
 
     </LinearLayout>
 
@@ -96,15 +99,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Appearance"
+            android:text="Job Title"
             android:textSize="18sp"
             android:padding="16dp"/>
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="140dp"
-            android:src="@drawable/baseline_arrow_forward" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="85dp"
+            android:text="Developer"
+            android:textSize="18sp"
+            android:padding="1dp"/>
 
     </LinearLayout>
 
@@ -123,7 +127,7 @@
         android:paddingRight="1dp">
 
         <ImageView
-            android:src="@drawable/baseline_lock"
+            android:src="@drawable/baseline_people"
             android:layout_width="40dp"
             android:layout_marginTop="10dp"
             android:layout_height="40dp"/>
@@ -131,16 +135,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Privacy Security"
+            android:text="Gender"
             android:textSize="18sp"
             android:padding="16dp"/>
 
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="110dp"
-            android:src="@drawable/baseline_arrow_forward" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:text="Male"
+            android:textSize="18sp"
+            android:padding="1dp"/>
 
     </LinearLayout>
 
@@ -151,60 +156,40 @@
 
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingLeft="1dp"
-        android:paddingRight="1dp">
 
-        <ImageView
-            android:src="@drawable/baseline_lock"
-            android:layout_width="40dp"
-            android:layout_marginTop="10dp"
-            android:layout_height="40dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Help and support"
-            android:textSize="18sp"
-            android:padding="16dp"/>
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="100dp"
-            android:src="@drawable/baseline_arrow_forward" />
 
-    </LinearLayout>
 
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_marginTop="80dp"
+        android:layout_gravity="center"
         android:paddingLeft="1dp"
         android:paddingRight="16dp">
-        <ImageView
-            android:src="@drawable/baseline_info"
-            android:layout_width="40dp"
-            android:layout_marginTop="10dp"
-            android:layout_height="40dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="About"
-            android:textSize="18sp"
-            android:padding="16dp"/>
 
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="190dp"
-            android:src="@drawable/baseline_arrow_forward" />
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="match_parent"
+            android:text="LOGOUT"
+            android:textAllCaps="false"
+            android:layout_height="match_parent">
+
+        </Button>
 
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/appVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="center"
+        android:text="App Version"
+        android:textSize="18sp"
+        android:padding="16dp"/>
+
 
 </LinearLayout>

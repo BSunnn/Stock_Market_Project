@@ -9,8 +9,6 @@ import com.example.myapplication.ui.stock.StockRepository
 import com.example.myapplication.ui.stock.StockViewModel
 import javax.inject.Inject
 
-
-
 //Factory is to create instance of ViewModel
 class CompanyListFactory @Inject constructor(
     finHubAli: FinHubApi,

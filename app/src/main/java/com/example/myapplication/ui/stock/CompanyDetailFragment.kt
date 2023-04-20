@@ -82,8 +82,6 @@ class CompanyDetailFragment : Fragment() {
             visibility = if (address.isEmpty()) View.GONE else View.VISIBLE
         }
         binding.companyDescription.text = companyItem.longDescription
-        binding.companyRecyclerView.adapter =
-            NameListAdapter(onClick = {}).also { it.submitList(companyItem.tags) }
         with(binding.companyWebsiteTextView) {
             text = companyItem.website
         }
