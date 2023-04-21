@@ -4,13 +4,12 @@ package com.example.myapplication.ui.companylist
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
-import androidx.room.Query
 import androidx.room.withTransaction
 import com.example.myapplication.database.StockItemsDatabase
 import com.example.myapplication.model.SavedStockItem
+import com.example.myapplication.model.StockCompany
 import com.example.myapplication.network.FinHubApi
 import com.example.myapplication.network.StockCompanyApi
-import com.example.myapplication.model.StockCompany
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
@@ -48,10 +47,6 @@ class CompanyListRepository @Inject constructor(
         ).flow
     }
 
-    suspend fun getStockItem(symbol: String): StockCompany = database.stockItemDao().getStockItem(symbol)
-
-
-
     suspend fun saved(symbol: String) {
         database.withTransaction {
             database.savedDao().save(SavedStockItem(symbol))
@@ -66,11 +61,9 @@ class CompanyListRepository @Inject constructor(
         }
     }
 
-
     suspend fun isSaved(symbol: String) : Boolean{
         return database.savedDao().isSaved(symbol) == 1
     }
-
 
     companion object {
         const val PAGE_SIZE = 15

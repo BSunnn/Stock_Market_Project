@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "222691549240",
+    "project_id": "capstone-project-fede0",
+    "storage_bucket": "capstone-project-fede0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:222691549240:android:9d8cd31b13a1961cb306cd",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "222691549240-phsnaddok1egcs000ptvhvl3bkrqmmcq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUZYpIAErLKNTl5VKYKM_NyrPdJpElYno"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "222691549240-phsnaddok1egcs000ptvhvl3bkrqmmcq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
